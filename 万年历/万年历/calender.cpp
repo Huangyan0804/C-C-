@@ -40,6 +40,8 @@ void show() {
 	for (int i = 0; i < 7; i++)
 		cout << "--" << '\t';
 	cout << endl;
+	if (leapyear(year))
+		monthdays[2] = 29;
 	firstday = zeller(year, month);
 	for (int i = 0; i < firstday; i++) {
 		cout << '\t';
@@ -57,8 +59,6 @@ void show() {
 int main() {
 	cout << "ÇëÊäÈëÄê¡¢ÔÂ£º";
 	cin >> year >> month;
-	if (leapyear(year))
-		monthdays[2] = 29;
 	show();
 	return 0;
 }
